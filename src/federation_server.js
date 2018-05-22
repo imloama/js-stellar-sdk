@@ -1,6 +1,7 @@
-import axios from 'axios';
+// import axios from 'axios';
+import axios from './axios_weex';
 import URI from 'urijs';
-import Promise from 'bluebird';
+// import Promise from 'bluebird';
 import isString from "lodash/isString";
 import pick from "lodash/pick";
 import {Config} from "./config";

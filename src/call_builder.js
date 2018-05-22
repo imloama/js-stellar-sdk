@@ -4,9 +4,11 @@ import forEach from 'lodash/forEach';
 let URI = require("urijs");
 let URITemplate = require("urijs/src/URITemplate");
 
-let axios = require("axios");
+//let axios = require("axios");
+import axios from './axios_weex';
+
 var EventSource = (typeof window === 'undefined') ? require('eventsource') : window.EventSource;
-let toBluebird = require("bluebird").resolve;
+//let toBluebird = require("bluebird").resolve;
 
 /**
  * Creates a new {@link CallBuilder} pointed to server defined by serverUrl.
@@ -166,7 +168,8 @@ export class CallBuilder {
     var promise = axios.get(url.toString())
       .then(response => response.data)
       .catch(this._handleNetworkError);
-    return toBluebird(promise);
+    //return toBluebird(promise);
+    return Promise.resolve(promise);
   }
 
   /**

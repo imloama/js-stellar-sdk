@@ -1,5 +1,6 @@
-import axios from 'axios';
-import Promise from 'bluebird';
+//import axios from 'axios';
+//import Promise from 'bluebird';
+import axios from './axios_weex';
 import toml from 'toml';
 import {Config} from "./config";
 

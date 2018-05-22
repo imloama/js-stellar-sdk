@@ -28,15 +28,19 @@ gulp.task('lint:test', function() {
     .pipe(plugins.jshint.reporter('fail'));
 });
 
+gulp.task('weex', function(done){
+  runSequence('clean', 'build:node', 'build:browser', done);
+})
+
 gulp.task('build', function(done) {
   runSequence('clean', 'build:node', 'build:browser', done);
 });
 
 gulp.task('test', function(done) {
-  runSequence('clean', 'test:unit', 'test:browser', function (err) {
-    server.kill();
-    done();
-  });
+  // runSequence('clean', 'test:unit', 'test:browser', function (err) {
+  //   server.kill();
+  //   done();
+  // });
 });
 
 
@@ -62,7 +66,7 @@ gulp.task('build:browser', ['lint:src'], function() {
       },
       plugins: [
         // Ignore native modules (ed25519)
-        new webpack.IgnorePlugin(/ed25519/)
+        new webpack.IgnorePlugin(/ed25519/,/weex/,/Promise/)
       ]
     }))
     // Add EventSource polyfill for IE11

@@ -18,8 +18,11 @@ import { TradeAggregationCallBuilder } from "./trade_aggregation_call_builder";
 import {xdr} from "stellar-base";
 import isString from "lodash/isString";
 
-let axios = require("axios");
-let toBluebird = require("bluebird").resolve;
+//let axios = require("axios");
+// let toBluebird = require("bluebird").resolve;
+import axios from './axios_weex';
+let toBluebird = Promise.resolve;
+
 let URI = require("urijs");
 let URITemplate = require("urijs").URITemplate;
 

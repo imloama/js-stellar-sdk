@@ -1,6 +1,6 @@
 {
-  "name": "stellar-sdk",
-  "version": "0.8.0",
+  "name": "weex-stellar-sdk",
+  "version": "0.1.0",
   "description": "stellar-sdk is a library for working with the Stellar Horizon server.",
   "main": "lib/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "docs": "jsdoc ./src/ -d docs/ -r ./docs/readme.md",
     "preversion": "gulp test",
     "version": "gulp build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "weex": "gulp weex"
   },
   "keywords": [
     "stellar"
@@ -77,9 +78,6 @@
   },
   "dependencies": {
     "urijs": "1.18.4",
-    "axios": "^0.12.0",
-    "bluebird": "^3.1.5",
-    "es6-promise": "^3.0.2",
     "event-source-polyfill": "0.0.7",
     "eventsource": "^0.2.1",
     "lodash": "^4.0.1",
